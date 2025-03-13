@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# URide - University Ridesharing Platform
+
+URide is a modern ridesharing platform designed specifically for university students. It connects drivers and riders within the university community, helps organize community events, and promotes sustainable transportation options.
+
+
+
+## Features
+
+- **Ridesharing**: Connect drivers with riders for campus commutes
+- **Community Events**: Discover and join university events
+- **Progress Tracking**: Track savings and achievements
+- **Real-time Chat**: Communicate with drivers or riders
+- **Interactive Maps**: View routes and locations with Google Maps integration
+- **User Profiles**: Manage your profile and preferences
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Maps**: Google Maps API
+- **Authentication**: Firebase Auth
+- **Database**: Firebase Firestore
+- **Analytics**: Firebase Analytics
+
+## Contributing
+
+We welcome contributions to improve URide! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style and naming conventions
+- Write meaningful commit messages
+- Add appropriate comments for complex logic
+- Update documentation for significant changes
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 16.8 or later
+- npm or yarn
+- Firebase account
+- Google Maps API key
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/uride.git
+   cd uride
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables:
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env.local
+
+   # Edit the .env.local file with your actual credentials
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## Environment Setup
+
+This project uses environment variables to store sensitive information like API keys. Follow these steps to set up your environment:
+
+1. Copy `.env.example` to `.env.local`
+2. Replace the placeholder values with your actual API keys and configuration
+
+**IMPORTANT: Never commit your `.env.local` file to version control. It contains sensitive information.**
+
+### Firebase Configuration
+
+The Firebase configuration requires the following environment variables in your `.env.local` file:
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Google Maps API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For the map functionality to work, you need to provide a Google Maps API key:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `/components` - Reusable UI components
+- `/contexts` - React context providers
+- `/lib` - Utility functions and service configurations
+- `/public` - Static assets
+- `/services` - API and service integrations
+- `/src/app` - Next.js app router pages
+- `/utils` - Helper functions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The easiest way to deploy URide is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a GitHub repository
+2. Import the project into Vercel
+3. Add your environment variables in the Vercel dashboard
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org) - The React framework
+- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
+- [Shadcn UI](https://ui.shadcn.com) - UI component library
+- [Firebase](https://firebase.google.com) - Backend services
+- [Google Maps Platform](https://developers.google.com/maps) - Maps and location services
