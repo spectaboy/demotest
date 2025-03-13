@@ -19,6 +19,7 @@ import { DinoAssistant } from "./DinoAssistant"
 import { Chat } from "./chat/Chat"
 import { ProfileSettings } from "./profile/ProfileSettings"
 import { RideHistory } from "./rides/RideHistory"
+import { ProgressDashboard } from "./ProgressDashboard"
 
 interface DashboardProps {
   userType: "driver" | "rider" | "organizer"
@@ -131,7 +132,7 @@ export function Dashboard({
       case "rider":
         return (
           <Tabs defaultValue="rides" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-zinc-800">
+            <TabsList className="grid w-full grid-cols-6 bg-zinc-800">
               <TabsTrigger
                 value="rides"
                 className="text-white font-semibold data-[state=active]:bg-[#CCFF00] data-[state=active]:text-black"
@@ -175,6 +176,9 @@ export function Dashboard({
             <TabsContent value="events">
               <CommunityEvents userRole={userType} userName={userProfile.name} />
             </TabsContent>
+            <TabsContent value="progress">
+              <ProgressDashboard userProfile={userProfile} />
+            </TabsContent>
             <TabsContent value="messages">
               <Chat userId={userProfile.name} />
             </TabsContent>
@@ -189,7 +193,7 @@ export function Dashboard({
       case "driver":
         return (
           <Tabs defaultValue="rides" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-zinc-800">
+            <TabsList className="grid w-full grid-cols-6 bg-zinc-800">
               <TabsTrigger
                 value="rides"
                 className="text-white font-semibold data-[state=active]:bg-[#CCFF00] data-[state=active]:text-black"
