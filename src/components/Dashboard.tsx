@@ -19,6 +19,7 @@ import { DinoAssistant } from "./DinoAssistant"
 import { Chat } from "./chat/Chat"
 import { ProfileSettings } from "./profile/ProfileSettings"
 import { RideHistory } from "./rides/RideHistory"
+import { ProgressDashboard } from "./ProgressDashboard"
 
 interface DashboardProps {
   userType: "driver" | "rider" | "organizer"
@@ -176,7 +177,7 @@ export function Dashboard({
               <CommunityEvents userRole={userType} userName={userProfile.name} />
             </TabsContent>
             <TabsContent value="progress">
-              <RiderDashboard userProfile={userProfile} isLoaded={isLoaded} />
+              <ProgressDashboard userProfile={userProfile} />
             </TabsContent>
             <TabsContent value="messages">
               <Chat userId={userProfile.name} />
